@@ -1,0 +1,13 @@
+<launch>
+	<!--Websocket launch-->
+	<!--This is how you would launch another launch file that is not part of another package-->
+	<include file="./websocket.launch"/>
+
+	<!--Call corresponding robot node for module1--> 
+	<!--This is how you run a node. The name doesn't matter, but it will show up in the terminal. The pkg is the package the python script resides in. The type is the name of the python script.-->
+
+	<node name='module1_sawyer' pkg='teachbot_ros' type='module1_right.py'/>
+	<!--Call the sh file to setup the nodejs server -->
+	<!--This is how you run an .sh file. The name doesn't matter, but it will show up in the terminal. The pkg is the package the python script resides in. The type is the name of the python script.-->
+	<node name='js_server' pkg='teachbot_ros' type='nodejs.sh' />
+</launch>
