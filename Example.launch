@@ -10,4 +10,9 @@
 	<!--Call the sh file to setup the nodejs server -->
 	<!--This is how you run an .sh file. The name doesn't matter, but it will show up in the terminal. The pkg is the package the python script resides in. The type is the name of the python script.-->
 	<node name='js_server' pkg='teachbot_ros' type='nodejs.sh' />
+
+	<!-- Arduino Launch -- >
+	<!-- This is how you would launch a node for rosserial -->
+	<!-- respawn="true" makes the arduino respawn in the case it fails-->
+	<node name='conveyor_arduino' pkg='rosserial_python' type='serial_node.py' args='/dev/ttyACM0' respawn="true"/> 
 </launch>
